@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+/* Para navegadores baseados em WebKit (Chrome, Safari)
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+  width: 0.5rem; /* Largura da barra de rolagem vertical */
+  height: 0.5rem; /* Altura da barra de rolagem horizontal */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Estilo do polegar (a parte arrastável) da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background-color: #3264d0; /* Cor do polegar */
+  border-radius: 6px; /* Borda arredondada do polegar */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Estilo da pista (a parte não arrastável) da barra de rolagem */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Cor da pista */
+  border-radius: 6px; /* Borda arredondada da pista */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+* {
+  /* Para navegadores que suportam a propriedade scrollbar-width */
+  /* Estilo da barra de rolagem */
+  scrollbar-width: none; /* Pode ser "thin", "auto" ou "none" */
+
+  /* Estilo do polegar (a parte arrastável) da barra de rolagem */
+  scrollbar-color: #333 #f1f1f1; /* Cor do polegar e da pista */
+}
+
+table,
+thead,
+tbody,
+tr,
+#scrollableDiv {
+  display: block;
+  width: 100%;
+}
+
+#scrollableDiv {
+  margin-right: 10px;
+  margin-bottom: 1rem;
+}
+
+table,
+thead,
+tbody,
+tr,
+td,
+th {
+  margin: 0;
+  padding: 0;
+  border-spacing: 0;
+  text-align: left;
+}
+
+tr,
+td,
+th {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 56px;
+  /* min-width: calc(100% / 7); */
+  box-sizing: border-box;
+  flex: 1;
 }
 
-.App-link {
-  color: #61dafb;
+td:first-child,
+th:first-child {
+  flex: 2;
+  /* padding-left: 100px; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#infinite-scroll tr > th {
+  background-color: #61dafb;
 }
+
+#infinite-scroll > thead > tr > th {
+  background-color: #ccc;
+}
+
+#table-data {
+ margin-right: 10px;
+ margin-bottom: 8px;
+}
+
+/* #table-data > tr > th {
+  padding-left: 50px;
+} */
+
